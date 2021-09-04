@@ -1,0 +1,275 @@
+/*this file contains:
+
+1) all global variables
+2) all default styles
+3) all styling for the header and footer
+
+***this also includes any associated media queries***
+*/
+:root {
+  --heading-font: "Raleway", sans-serif;
+  --content-font: "Inconsolata", monospace;
+  --accent-font: "DM Mono", monospace;
+  --default-transition: all 250ms ease-in;
+  --fast-transition: all 200ms ease-in;
+  --slow-transition: all 400ms ease-in;
+  --main-blue: rgba(11, 20, 236, 1);
+  --neon-teal: rgba(0, 240, 255, 1);
+  --off-white: rgba(240, 240, 240, 1);
+  --dark-blue: rgba(28, 30, 81, 1);
+  --segment-animation: 700ms ease-out infinite;
+  --ring-animation: 20000ms linear infinite;
+  --drifter-animation: 15000ms linear infinite;
+}
+body {
+  background: var(--dark-blue);
+  overflow-x: hidden;
+  width: 100vw;
+}
+h1,
+h2,
+h3,
+a.secondary {
+  color: var(--neon-teal);
+  font-family: var(--heading-font);
+  font-weight: bold;
+  text-align: center;
+}
+h2 {
+  font-size: 1.9rem;
+}
+section {
+  position: relative;
+}
+p {
+  color: var(--off-white);
+  font-family: var(--content-font);
+  line-height: 2rem;
+  text-align: center;
+}
+a.primary {
+  color: var(--dark-blue);
+  background-color: var(--neon-teal);
+  font-family: var(--heading-font);
+  font-weight: bold;
+  text-align: center;
+}
+a.secondary,
+a.primary {
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  border: 3px solid var(--neon-teal);
+  font-size: 1.125rem;
+}
+a.primary {
+  border: none;
+}
+.text-content {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1;
+}
+/*****************************************/
+/*****************HEADER******************/
+/*****************************************/
+
+header {
+  height: 4rem;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+header .logo {
+  z-index: 2;
+}
+#burger-button {
+  display: none;
+}
+.burger-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 2;
+}
+.burger-button-line {
+  height: 0.3rem;
+  width: 75%;
+  background: var(--off-white);
+}
+nav {
+  position: fixed;
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  z-index: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--dark-blue);
+  transition: opacity 250ms ease-in, left 0ms linear 250ms;
+}
+
+/*CSS hack to make nav appear when user selects the burger button */
+#burger-button:checked ~ nav {
+  opacity: 1;
+  left: 0;
+  transition: opacity 250ms ease-in;
+}
+nav ul {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  font-family: var(--heading-font);
+  font-weight: bold;
+  color: var(--off-white);
+  height: 100%;
+  opacity: 0;
+  transition: var(--default-transition);
+}
+#burger-button:checked ~ nav ul {
+  opacity: 1;
+  transition: var(--default-transition);
+}
+@media screen and (min-width: 825px) {
+  .burger-button {
+    display: none;
+  }
+  nav {
+    opacity: 1;
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+  }
+  nav ul {
+    flex-direction: row;
+    gap: 7vw;
+    opacity: 1;
+  }
+}
+/*****************************************/
+/****************FOOTER*******************/
+/*****************************************/
+
+/*essentially complete!*/
+/*maybe tweak font sizes, tweak gaps, potentially add social media mini menu */
+
+footer {
+  margin: 3rem 0 1rem;
+  overflow: hidden;
+}
+footer .visual-content {
+  z-index: -1;
+}
+footer .visual-content img {
+  width: 100%;
+}
+footer .text-content {
+  display: flex;
+  align-items: start;
+  margin-top: -3rem;
+}
+footer h1 {
+  margin-left: -0.5rem;
+}
+footer .menu-content {
+  display: grid;
+  justify-content: start;
+  align-items: start;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 3rem 0;
+  width: 95%;
+}
+footer h3 {
+  font-size: 1.1rem;
+  text-align: left;
+}
+footer .mini-menu:nth-child(even) {
+  justify-self: end;
+}
+footer .mini-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+footer .mini-menu a {
+  color: var(--off-white);
+  font-family: var(--heading-font);
+  font-size: 0.75rem;
+  letter-spacing: 10%;
+}
+@media screen and (min-width: 390px) {
+  footer .text-content {
+    width: 95%;
+    margin: -5rem auto 0;
+  }
+  footer h1 {
+    margin-left: 1rem;
+  }
+  footer .menu-content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 490px) {
+  footer {
+    margin-top: 3rem;
+  }
+
+  footer .text-content {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  footer h1 {
+    margin-left: 0;
+  }
+  footer .menu-content {
+    justify-content: end;
+  }
+}
+@media screen and (min-width: 550px) {
+  footer .menu-content {
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 650px) {
+  footer .visual-content {
+    position: relative;
+    top: 7vw;
+  }
+}
+@media screen and (min-width: 800px) {
+  footer .visual-content {
+    top: 12vw;
+  }
+  footer .menu-content {
+    gap: 4rem;
+  }
+  footer .text-content {
+    width: 92.5%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  footer .visual-content {
+    top: 15vw;
+  }
+}

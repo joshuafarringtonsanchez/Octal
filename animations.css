@@ -1,0 +1,529 @@
+/*this file contains
+
+1) all styling for child elements of <svg> elements (does not include the <svg> element itself)
+2) all animations (does not include :hover, :active, :focus, etc. For those look in the global CSS file)
+
+*/
+
+svg.octopus-ring-setup .octopus-ring {
+  transform-origin: center;
+  animation: rotate 60000ms linear infinite;
+}
+svg.octopus-ring-setup .central-clam {
+  animation: rotate 7500ms linear infinite reverse;
+  transform-origin: center;
+}
+
+svg.octopus-ring-setup .segment-1 {
+  animation: segment-1 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-2 {
+  animation: segment-2 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-3 {
+  animation: segment-3 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-4 {
+  animation: segment-4 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-5 {
+  animation: segment-5 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-6 {
+  animation: segment-6 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-7 {
+  animation: segment-7 var(--segment-animation);
+}
+svg.octopus-ring-setup .segment-8 {
+  animation: segment-8 var(--segment-animation);
+}
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes segment-1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-2 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-3 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(1.25rem, -1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-4 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(-1.25rem, 1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-5 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(-1.25rem, -1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-6 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(1.25rem, 1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-7 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateY(-1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes segment-8 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateY(1.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes octopi-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(31.7%);
+    /*digital octopi svg is a tesselation with 3 repetitions, but each rep overlaps, so we compensate by translating by 31.7% instead of 33.3%*/
+  }
+}
+@keyframes coin-carousel {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+svg.upper-ring,
+svg.lower-ring {
+  position: relative;
+  width: 138.4%;
+  right: 19.2%;
+  height: auto;
+}
+
+/*these classes represent positions in a "grid" for the octopus ring graphics in info-1. The top row is row a, the middle row b, and the bottom row c.
+  the numbers in the class names represent the position of an icon within its row. Position 1 is at the far right, and position 6 is the far left.
+*/
+svg.upper-ring [class$="1"] {
+  animation: upper-pos-1 var(--ring-animation);
+}
+svg.upper-ring [class$="2"] {
+  animation: upper-pos-2 var(--ring-animation);
+}
+svg.upper-ring [class$="3"] {
+  animation: upper-pos-3 var(--ring-animation);
+}
+svg.upper-ring [class$="4"] {
+  animation: upper-pos-4 var(--ring-animation);
+}
+svg.upper-ring [class$="5"] {
+  animation: upper-pos-5 var(--ring-animation);
+}
+svg.upper-ring [class$="6"] {
+  animation: upper-pos-6 var(--ring-animation);
+}
+
+svg.upper-ring [class^="b"] {
+  animation-direction: reverse;
+}
+
+/*these keyframes are made ONLY for the octopus icon in the upper and lower rings of info-1.*/
+
+/*these values are not arbitrary
+to move diagonally 1 position, add or subtract 15.4% to the x coordinate and 6.21% to the y coordinate
+to more horizontally 1 position, add or subtract 18.2% to the x coordinate and 0 to the y coordinate.
+
+Each icon moves half a diagonal position more once it passes the last position, before being translated to the opposite side.
+When translated to the opposite side, it is half a diagonal position before the first position.
+*/
+@keyframes upper-pos-1 {
+  16.67% {
+    transform: translate(-15.4%, -12.42%);
+  }
+  33.33% {
+    transform: translate(-30.8%, -24.84%);
+  }
+  50% {
+    transform: translate(-49%, -24.84%);
+  }
+  66.67% {
+    transform: translate(-64.4%, -12.42%);
+  }
+  83.33% {
+    transform: translate(-79.8%, 0);
+  }
+  91.63% {
+    transform: translate(-87.5%, 6.21%);
+  }
+  91.64% {
+    transform: translate(7.7%, 6.21%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-2 {
+  16.67% {
+    transform: translate(-15.4%, -12.42%);
+  }
+  33.33% {
+    transform: translate(-33.6%, -12.42%);
+  }
+  50% {
+    transform: translate(-49%, 0);
+  }
+  66.67% {
+    transform: translate(-64.4%, 12.42%);
+  }
+  74.99% {
+    transform: translate(-72.1%, 18.63%);
+  }
+  75% {
+    transform: translate(23.1%, 18.63%);
+  }
+  83.33% {
+    transform: translate(15.4%, 12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-3 {
+  16.67% {
+    transform: translate(-18.2%, 0);
+  }
+  33.33% {
+    transform: translate(-33.6%, 12.42%);
+  }
+  50% {
+    transform: translate(-49%, 24.84%);
+  }
+  58.33% {
+    transform: translate(-56.7%, 31.05%);
+  }
+  58.34% {
+    transform: translate(38.5%, 31.05%);
+  }
+  66.67% {
+    transform: translate(30.8%, 24.84%);
+  }
+  83.33% {
+    transform: translate(15.4%, 12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-4 {
+  16.67% {
+    transform: translate(-15.4%, 12.42%);
+  }
+  33.33% {
+    transform: translate(-30.8%, 24.84%);
+  }
+  41.66% {
+    transform: translate(-38.5%, 31.05%);
+  }
+  41.67% {
+    transform: translate(56.7%, 31.05%);
+  }
+  50% {
+    transform: translate(49%, 24.84%);
+  }
+  66.67% {
+    transform: translate(33.6%, 12.42%);
+  }
+  83.33% {
+    transform: translate(18.2%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-5 {
+  16.67% {
+    transform: translate(-15.4%, 12.42%);
+  }
+  25% {
+    transform: translate(-23.1%, 18.63%);
+  }
+  25.01% {
+    transform: translate(72.1%, 18.63%);
+  }
+  33.33% {
+    transform: translate(64.4%, 12.42%);
+  }
+  50% {
+    transform: translate(49%, 0);
+  }
+  66.67% {
+    transform: translate(33.6%, -12.42%);
+  }
+  83.33% {
+    transform: translate(15.4%, -12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-6 {
+  8.33% {
+    transform: translate(-7.7%, 6.21%);
+  }
+  8.34% {
+    transform: translate(87.5%, 6.21%);
+  }
+  16.67% {
+    transform: translate(79.8%, 0);
+  }
+  33.33% {
+    transform: translate(64.4%, -12.42%);
+  }
+  50% {
+    transform: translate(49%, -24.84%);
+  }
+  66.67% {
+    transform: translate(30.8%, -24.84%);
+  }
+  83.33% {
+    transform: translate(15.4%, -12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+svg.lower-ring [class$="1"] {
+  animation: lower-pos-1 var(--ring-animation);
+}
+svg.lower-ring [class$="2"] {
+  animation: lower-pos-2 var(--ring-animation);
+}
+svg.lower-ring [class$="3"] {
+  animation: lower-pos-3 var(--ring-animation);
+}
+svg.lower-ring [class$="4"] {
+  animation: lower-pos-4 var(--ring-animation);
+}
+svg.lower-ring [class$="5"] {
+  animation: lower-pos-5 var(--ring-animation);
+}
+svg.lower-ring [class$="6"] {
+  animation: lower-pos-6 var(--ring-animation);
+}
+
+svg.lower-ring [class^="a"],
+svg.lower-ring [class^="c"] {
+  animation-direction: reverse;
+}
+@keyframes lower-pos-1 {
+  16.67% {
+    transform: translate(-15.4%, 12.42%);
+  }
+  33.33% {
+    transform: translate(-30.8%, 24.84%);
+  }
+  50% {
+    transform: translate(-49%, 24.84%);
+  }
+  66.67% {
+    transform: translate(-64.4%, 12.42%);
+  }
+  83.33% {
+    transform: translate(-79.8%, 0);
+  }
+  91.63% {
+    transform: translate(-87.5%, -6.21%);
+  }
+  91.64% {
+    transform: translate(7.7%, -6.21%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-2 {
+  16.67% {
+    transform: translate(-15.4%, 12.42%);
+  }
+  33.33% {
+    transform: translate(-33.6%, 12.42%);
+  }
+  50% {
+    transform: translate(-49%, 0);
+  }
+  66.67% {
+    transform: translate(-64.4%, -12.42%);
+  }
+  74.99% {
+    transform: translate(-72.1%, -18.63%);
+  }
+  75% {
+    transform: translate(23.1%, -18.63%);
+  }
+  83.33% {
+    transform: translate(15.4%, -12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-3 {
+  16.67% {
+    transform: translate(-18.2%, 0);
+  }
+  33.33% {
+    transform: translate(-33.6%, -12.42%);
+  }
+  50% {
+    transform: translate(-49%, -24.84%);
+  }
+  58.33% {
+    transform: translate(-56.7%, -31.05%);
+  }
+  58.34% {
+    transform: translate(38.5%, -31.05%);
+  }
+  66.67% {
+    transform: translate(30.8%, -24.84%);
+  }
+  83.33% {
+    transform: translate(15.4%, -12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-4 {
+  16.67% {
+    transform: translate(-15.4%, -12.42%);
+  }
+  33.33% {
+    transform: translate(-30.8%, -24.84%);
+  }
+  41.66% {
+    transform: translate(-38.5%, -31.05%);
+  }
+  41.67% {
+    transform: translate(56.7%, -31.05%);
+  }
+  50% {
+    transform: translate(49%, -24.84%);
+  }
+  66.67% {
+    transform: translate(33.6%, -12.42%);
+  }
+  83.33% {
+    transform: translate(18.2%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-5 {
+  16.67% {
+    transform: translate(-15.4%, -12.42%);
+  }
+  25% {
+    transform: translate(-23.1%, -18.63%);
+  }
+  25.01% {
+    transform: translate(72.1%, -18.63%);
+  }
+  33.33% {
+    transform: translate(64.4%, -12.42%);
+  }
+  50% {
+    transform: translate(49%, 0);
+  }
+  66.67% {
+    transform: translate(33.6%, 12.42%);
+  }
+  83.33% {
+    transform: translate(15.4%, 12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-6 {
+  8.33% {
+    transform: translate(-7.7%, -6.21%);
+  }
+  8.34% {
+    transform: translate(87.5%, -6.21%);
+  }
+  16.67% {
+    transform: translate(79.8%, 0);
+  }
+  33.33% {
+    transform: translate(64.4%, 12.42%);
+  }
+  50% {
+    transform: translate(49%, 24.84%);
+  }
+  66.67% {
+    transform: translate(30.8%, 24.84%);
+  }
+  83.33% {
+    transform: translate(15.4%, 12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
