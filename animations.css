@@ -4,6 +4,9 @@
 2) all animations (does not include :hover, :active, :focus, etc. For those look in the global CSS file)
 
 */
+/*********************************************/
+/******** OCTOPUS RING WITH CLAM **************/
+/*********************************************/
 
 svg.octopus-ring-setup .octopus-ring {
   transform-origin: center;
@@ -131,6 +134,10 @@ svg.octopus-ring-setup .segment-8 {
     transform: translateX(0);
   }
 }
+/*******************************************************/
+/************* OCTOPI AND COIN CAROUSELS ***************/
+/*******************************************************/
+
 @keyframes octopi-carousel {
   0% {
     transform: translateX(0);
@@ -148,14 +155,9 @@ svg.octopus-ring-setup .segment-8 {
     transform: translateX(-33.33%);
   }
 }
-svg.upper-ring,
-svg.lower-ring {
-  position: relative;
-  width: 138.4%;
-  right: 19.2%;
-  height: auto;
-}
-
+/********************************************************/
+/********************** OCTOPI SWARM RINGS **************/
+/********************************************************/
 /*these classes represent positions in a "grid" for the octopus ring graphics in info-1. The top row is row a, the middle row b, and the bottom row c.
   the numbers in the class names represent the position of an icon within its row. Position 1 is at the far right, and position 6 is the far left.
 */
@@ -178,11 +180,43 @@ svg.upper-ring [class$="6"] {
   animation: upper-pos-6 var(--ring-animation);
 }
 
-svg.upper-ring [class^="b"] {
-  animation-direction: reverse;
+svg.lower-ring [class$="1"] {
+  animation: lower-pos-1 var(--ring-animation);
+}
+svg.lower-ring [class$="2"] {
+  animation: lower-pos-2 var(--ring-animation);
+}
+svg.lower-ring [class$="3"] {
+  animation: lower-pos-3 var(--ring-animation);
+}
+svg.lower-ring [class$="4"] {
+  animation: lower-pos-4 var(--ring-animation);
+}
+svg.lower-ring [class$="5"] {
+  animation: lower-pos-5 var(--ring-animation);
+}
+svg.lower-ring [class$="6"] {
+  animation: lower-pos-6 var(--ring-animation);
 }
 
-/*these keyframes are made ONLY for the octopus icon in the upper and lower rings of info-1.*/
+svg.lower-ring [class^="a"],
+svg.upper-ring [class^="b"],
+svg.lower-ring [class^="c"] {
+  animation-direction: reverse;
+}
+svg.upper-ring [class^="c"],
+svg.lower-ring [class^="a"],
+svg.upper-ring-wide [class^="c"],
+svg.lower-ring-wide [class^="a"] {
+  opacity: 20%;
+}
+svg.upper-ring [class^="b"],
+svg.lower-ring [class^="b"],
+svg.upper-ring-wide [class^="b"],
+svg.lower-ring-wide [class^="b"] {
+  opacity: 50%;
+}
+/*these keyframes are made ONLY for the octopus svgs in the upper and lower rings of info-1.*/
 
 /*these values are not arbitrary
 to move diagonally 1 position, add or subtract 15.4% to the x coordinate and 6.21% to the y coordinate
@@ -209,9 +243,11 @@ When translated to the opposite side, it is half a diagonal position before the 
   }
   91.63% {
     transform: translate(-87.5%, 6.21%);
+    visibility: none;
   }
   91.64% {
     transform: translate(7.7%, 6.21%);
+    visibility: visible;
   }
   100% {
     transform: translate(0, 0);
@@ -232,9 +268,11 @@ When translated to the opposite side, it is half a diagonal position before the 
   }
   74.99% {
     transform: translate(-72.1%, 18.63%);
+    visibility: none;
   }
   75% {
     transform: translate(23.1%, 18.63%);
+    visibility: visible;
   }
   83.33% {
     transform: translate(15.4%, 12.42%);
@@ -348,29 +386,6 @@ When translated to the opposite side, it is half a diagonal position before the 
   }
 }
 
-svg.lower-ring [class$="1"] {
-  animation: lower-pos-1 var(--ring-animation);
-}
-svg.lower-ring [class$="2"] {
-  animation: lower-pos-2 var(--ring-animation);
-}
-svg.lower-ring [class$="3"] {
-  animation: lower-pos-3 var(--ring-animation);
-}
-svg.lower-ring [class$="4"] {
-  animation: lower-pos-4 var(--ring-animation);
-}
-svg.lower-ring [class$="5"] {
-  animation: lower-pos-5 var(--ring-animation);
-}
-svg.lower-ring [class$="6"] {
-  animation: lower-pos-6 var(--ring-animation);
-}
-
-svg.lower-ring [class^="a"],
-svg.lower-ring [class^="c"] {
-  animation-direction: reverse;
-}
 @keyframes lower-pos-1 {
   16.67% {
     transform: translate(-15.4%, 12.42%);
@@ -522,6 +537,701 @@ svg.lower-ring [class^="c"] {
   }
   83.33% {
     transform: translate(15.4%, 12.42%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/*to translate diagonally change the x coordinate by 10.8% and the y coordinate by 10.8%
+the values being the same is a serendipitous occurence. Be grateful.
+
+to translate to and from the middle position, change y coord by 5% instead of 10.8%
+*/
+svg.lower-ring-wide [class$="1"] {
+  animation: lower-pos-wide-1 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="2"] {
+  animation: lower-pos-wide-2 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="3"] {
+  animation: lower-pos-wide-3 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="4"] {
+  animation: lower-pos-wide-4 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="5"] {
+  animation: lower-pos-wide-5 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="6"] {
+  animation: lower-pos-wide-6 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="7"] {
+  animation: lower-pos-wide-7 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="8"] {
+  animation: lower-pos-wide-8 var(--ring-animation);
+}
+svg.lower-ring-wide [class$="9"] {
+  animation: lower-pos-wide-9 var(--ring-animation);
+}
+@keyframes upper-pos-wide-1 {
+  11.11% {
+    transform: translate(-10.8%, -10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, -21.6%);
+  }
+  33.33% {
+    transform: translate(-32.4%, -32.4%);
+  }
+  44.44% {
+    transform: translate(-43.2%, -37.4%);
+  }
+  55.55% {
+    transform: translate(-54%, -32.4%);
+  }
+  66.67% {
+    transform: translate(-64.8%, -21.6%);
+  }
+  77.78% {
+    transform: translate(-75.6%, -10.8%);
+  }
+  88.89% {
+    transform: translate(-86.4%, 0);
+  }
+  94.44% {
+    transform: translate(-91.8%, 5.4%);
+  }
+  94.45% {
+    transform: translate(5.4%, 5.4%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-2 {
+  11.11% {
+    transform: translate(-10.8%, -10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, -21.6%);
+  }
+  33.33% {
+    transform: translate(-32.4%, -26.6%);
+  }
+  44.44% {
+    transform: translate(-43.2%, -21.6%);
+  }
+  55.56% {
+    transform: translate(-54%, -10.8%);
+  }
+  66.67% {
+    transform: translate(-64.8%, 0);
+  }
+  77.78% {
+    transform: translate(-75.6%, 10.8%);
+  }
+  83.33% {
+    transform: translate(-81%, 16.2%);
+  }
+  83.34% {
+    transform: translate(16.2%, 16.2%);
+  }
+  88.89% {
+    transform: translate(10.8%, 10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-3 {
+  11.11% {
+    transform: translate(-10.8%, -10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, -15.8%);
+  }
+  33.33% {
+    transform: translate(-32.4%, -10.8%);
+  }
+  44.44% {
+    transform: translate(-43.2%, 0);
+  }
+  55.56% {
+    transform: translate(-54%, 10.8%);
+  }
+  66.67% {
+    transform: translate(-64.8%, 21.6%);
+  }
+  72.23% {
+    transform: translate(-70.2%, 27%);
+  }
+  72.24% {
+    transform: translate(27%, 27%);
+  }
+  77.78% {
+    transform: translate(21.6%, 21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, 10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-4 {
+  11.11% {
+    transform: translate(-10.8%, -5%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 0);
+  }
+  33.33% {
+    transform: translate(-32.4%, 10.8%);
+  }
+  44.44% {
+    transform: translate(-43.2%, 21.6%);
+  }
+  55.56% {
+    transform: translate(-54%, 32.4%);
+  }
+  61.12% {
+    transform: translate(-59.4%, 37.8%);
+  }
+  61.13% {
+    transform: translate(37.8%, 37.8%);
+  }
+  66.67% {
+    transform: translate(32.4%, 32.4%);
+  }
+  77.78% {
+    transform: translate(21.6%, 21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, 10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-5 {
+  11.11% {
+    transform: translate(-10.8%, 5%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 15.8%);
+  }
+  33.33% {
+    transform: translate(-32.4%, 26.6%);
+  }
+  44.44% {
+    transform: translate(-43.2%, 37.4%);
+  }
+  50% {
+    transform: translate(-48.6%, 42.8%);
+  }
+  50.01% {
+    transform: translate(48.6%, 42.8%);
+  }
+  55.56% {
+    transform: translate(43.2%, 37.4%);
+  }
+  66.67% {
+    transform: translate(32.4%, 26.6%);
+  }
+  77.78% {
+    transform: translate(21.6%, 15.8%);
+  }
+  88.89% {
+    transform: translate(10.8%, 5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-6 {
+  11.11% {
+    transform: translate(-10.8%, 10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 21.6%);
+  }
+  33.33% {
+    transform: translate(-32.4%, 32.4%);
+  }
+  38.89% {
+    transform: translate(-37.8%, 37.8%);
+  }
+  38.9% {
+    transform: translate(59.4%, 37.8%);
+  }
+  44.44% {
+    transform: translate(54%, 32.4%);
+  }
+  55.56% {
+    transform: translate(43.2%, 21.6%);
+  }
+  66.67% {
+    transform: translate(32.4%, 10.8%);
+  }
+  77.78% {
+    transform: translate(21.6%, 0);
+  }
+  88.89% {
+    transform: translate(10.8%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-7 {
+  11.11% {
+    transform: translate(-10.8%, 10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 21.6%);
+  }
+  27.78% {
+    transform: translate(-27%, 27%);
+  }
+  27.79% {
+    transform: translate(70.2%, 27%);
+  }
+  33.33% {
+    transform: translate(64.8%, 21.6%);
+  }
+  44.44% {
+    transform: translate(54%, 10.8%);
+  }
+  55.56% {
+    transform: translate(43.2%, 0);
+  }
+  66.67% {
+    transform: translate(32.4%, -10.8%);
+  }
+  77.78% {
+    transform: translate(21.6%, -15.8%);
+  }
+  88.89% {
+    transform: translate(10.8%, -10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-8 {
+  11.11% {
+    transform: translate(-10.8%, 10.8%);
+  }
+  16.67% {
+    transform: translate(-16.2%, 16.2%);
+  }
+  16.68% {
+    transform: translate(81%, 16.2%);
+  }
+  22.22% {
+    transform: translate(75.6%, 10.8%);
+  }
+  33.33% {
+    transform: translate(64.8%, 0);
+  }
+  44.44% {
+    transform: translate(54%, -10.8%);
+  }
+  55.56% {
+    transform: translate(43.2%, -21.6%);
+  }
+  66.67% {
+    transform: translate(32.4%, -26.6%);
+  }
+  77.78% {
+    transform: translate(21.6%, -21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, -10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes upper-pos-wide-9 {
+  5.56% {
+    transform: translate(-5.4%, 5.4%);
+  }
+  5.57% {
+    transform: translate(91.8%, 5.4%);
+  }
+  11.11% {
+    transform: translate(86.4%, 0);
+  }
+  22.22% {
+    transform: translate(75.6%, -10.8%);
+  }
+  33.33% {
+    transform: translate(64.8%, -21.6%);
+  }
+  44.44% {
+    transform: translate(54%, -32.4%);
+  }
+  55.56% {
+    transform: translate(43.2%, -37.4%);
+  }
+  66.67% {
+    transform: translate(32.4%, -32.4%);
+  }
+  77.78% {
+    transform: translate(21.6%, -21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, -10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+svg.upper-ring-wide [class$="1"] {
+  animation: upper-pos-wide-1 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="2"] {
+  animation: upper-pos-wide-2 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="3"] {
+  animation: upper-pos-wide-3 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="4"] {
+  animation: upper-pos-wide-4 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="5"] {
+  animation: upper-pos-wide-5 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="6"] {
+  animation: upper-pos-wide-6 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="7"] {
+  animation: upper-pos-wide-7 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="8"] {
+  animation: upper-pos-wide-8 var(--ring-animation);
+}
+svg.upper-ring-wide [class$="9"] {
+  animation: upper-pos-wide-9 var(--ring-animation);
+}
+
+svg.lower-ring-wide [class^="a"],
+svg.upper-ring-wide [class^="b"],
+svg.lower-ring-wide [class^="c"] {
+  animation-direction: reverse;
+}
+@keyframes lower-pos-wide-1 {
+  11.11% {
+    transform: translate(-10.8%, 10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 21.6%);
+  }
+  33.33% {
+    transform: translate(-32.4%, 32.4%);
+  }
+  44.44% {
+    transform: translate(-43.2%, 37.4%);
+  }
+  55.55% {
+    transform: translate(-54%, 32.4%);
+  }
+  66.67% {
+    transform: translate(-64.8%, 21.6%);
+  }
+  77.78% {
+    transform: translate(-75.6%, 10.8%);
+  }
+  88.89% {
+    transform: translate(-86.4%, 0);
+  }
+  94.44% {
+    transform: translate(-91.8%, -5.4%);
+  }
+  94.45% {
+    transform: translate(5.4%, -5.4%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-2 {
+  11.11% {
+    transform: translate(-10.8%, 10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 21.6%);
+  }
+  33.33% {
+    transform: translate(-32.4%, 26.6%);
+  }
+  44.44% {
+    transform: translate(-43.2%, 21.6%);
+  }
+  55.56% {
+    transform: translate(-54%, 10.8%);
+  }
+  66.67% {
+    transform: translate(-64.8%, 0);
+  }
+  77.78% {
+    transform: translate(-75.6%, -10.8%);
+  }
+  83.33% {
+    transform: translate(-81%, -16.2%);
+  }
+  83.34% {
+    transform: translate(16.2%, -16.2%);
+  }
+  88.89% {
+    transform: translate(10.8%, -10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-3 {
+  11.11% {
+    transform: translate(-10.8%, 10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 15.8%);
+  }
+  33.33% {
+    transform: translate(-32.4%, 10.8%);
+  }
+  44.44% {
+    transform: translate(-43.2%, 0);
+  }
+  55.56% {
+    transform: translate(-54%, -10.8%);
+  }
+  66.67% {
+    transform: translate(-64.8%, -21.6%);
+  }
+  72.23% {
+    transform: translate(-70.2%, -27%);
+  }
+  72.24% {
+    transform: translate(27%, -27%);
+  }
+  77.78% {
+    transform: translate(21.6%, -21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, -10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-4 {
+  11.11% {
+    transform: translate(-10.8%, 5%);
+  }
+  22.22% {
+    transform: translate(-21.6%, 0);
+  }
+  33.33% {
+    transform: translate(-32.4%, -10.8%);
+  }
+  44.44% {
+    transform: translate(-43.2%, -21.6%);
+  }
+  55.56% {
+    transform: translate(-54%, -32.4%);
+  }
+  61.12% {
+    transform: translate(-59.4%, -37.8%);
+  }
+  61.13% {
+    transform: translate(37.8%, -37.8%);
+  }
+  66.67% {
+    transform: translate(32.4%, -32.4%);
+  }
+  77.78% {
+    transform: translate(21.6%, -21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, -10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-5 {
+  11.11% {
+    transform: translate(-10.8%, -5%);
+  }
+  22.22% {
+    transform: translate(-21.6%, -15.8%);
+  }
+  33.33% {
+    transform: translate(-32.4%, -26.6%);
+  }
+  44.44% {
+    transform: translate(-43.2%, -37.4%);
+  }
+  50% {
+    transform: translate(-48.6%, -42.8%);
+  }
+  50.01% {
+    transform: translate(48.6%, -42.8%);
+  }
+  55.56% {
+    transform: translate(43.2%, -37.4%);
+  }
+  66.67% {
+    transform: translate(32.4%, -26.6%);
+  }
+  77.78% {
+    transform: translate(21.6%, -15.8%);
+  }
+  88.89% {
+    transform: translate(10.8%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-6 {
+  11.11% {
+    transform: translate(-10.8%, -10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, -21.6%);
+  }
+  33.33% {
+    transform: translate(-32.4%, -32.4%);
+  }
+  38.89% {
+    transform: translate(-37.8%, -37.8%);
+  }
+  38.9% {
+    transform: translate(59.4%, -37.8%);
+  }
+  44.44% {
+    transform: translate(54%, -32.4%);
+  }
+  55.56% {
+    transform: translate(43.2%, -21.6%);
+  }
+  66.67% {
+    transform: translate(32.4%, -10.8%);
+  }
+  77.78% {
+    transform: translate(21.6%, 0);
+  }
+  88.89% {
+    transform: translate(10.8%, 5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-7 {
+  11.11% {
+    transform: translate(-10.8%, -10.8%);
+  }
+  22.22% {
+    transform: translate(-21.6%, -21.6%);
+  }
+  27.78% {
+    transform: translate(-27%, -27%);
+  }
+  27.79% {
+    transform: translate(70.2%, -27%);
+  }
+  33.33% {
+    transform: translate(64.8%, -21.6%);
+  }
+  44.44% {
+    transform: translate(54%, -10.8%);
+  }
+  55.56% {
+    transform: translate(43.2%, 0);
+  }
+  66.67% {
+    transform: translate(32.4%, 10.8%);
+  }
+  77.78% {
+    transform: translate(21.6%, 15.8%);
+  }
+  88.89% {
+    transform: translate(10.8%, 10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-8 {
+  11.11% {
+    transform: translate(-10.8%, -10.8%);
+  }
+  16.67% {
+    transform: translate(-16.2%, -16.2%);
+  }
+  16.68% {
+    transform: translate(81%, -16.2%);
+  }
+  22.22% {
+    transform: translate(75.6%, -10.8%);
+  }
+  33.33% {
+    transform: translate(64.8%, 0);
+  }
+  44.44% {
+    transform: translate(54%, 10.8%);
+  }
+  55.56% {
+    transform: translate(43.2%, 21.6%);
+  }
+  66.67% {
+    transform: translate(32.4%, 26.6%);
+  }
+  77.78% {
+    transform: translate(21.6%, 21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, 10.8%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes lower-pos-wide-9 {
+  5.56% {
+    transform: translate(-5.4%, -5.4%);
+  }
+  5.57% {
+    transform: translate(91.8%, -5.4%);
+  }
+  11.11% {
+    transform: translate(86.4%, 0);
+  }
+  22.22% {
+    transform: translate(75.6%, 10.8%);
+  }
+  33.33% {
+    transform: translate(64.8%, 21.6%);
+  }
+  44.44% {
+    transform: translate(54%, 32.4%);
+  }
+  55.56% {
+    transform: translate(43.2%, 37.4%);
+  }
+  66.67% {
+    transform: translate(32.4%, 32.4%);
+  }
+  77.78% {
+    transform: translate(21.6%, 21.6%);
+  }
+  88.89% {
+    transform: translate(10.8%, 10.8%);
   }
   100% {
     transform: translate(0, 0);

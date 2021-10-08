@@ -1,7 +1,7 @@
 /*this file contains:
 
 1) all global variables
-2) all default styles
+2) all developer defined default styles
 3) all styling for the header and footer
 
 ***this also includes any associated media queries***
@@ -19,7 +19,10 @@
   --dark-blue: rgba(28, 30, 81, 1);
   --segment-animation: 700ms ease-out infinite;
   --ring-animation: 20000ms linear infinite;
-  --drifter-animation: 15000ms linear infinite;
+  --ring-translation-x: -15.4%;
+  --ring-translation-y: 12.42%;
+  --wide-ring-translation-x: -10.8%;
+  --wide-ring-translation-y: 10.8%;
 }
 body {
   background: var(--dark-blue);
