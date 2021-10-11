@@ -179,52 +179,6 @@ svg.upper-ring [class$="5"] {
 svg.upper-ring [class$="6"] {
   animation: upper-pos-6 var(--ring-animation);
 }
-
-svg.lower-ring [class$="1"] {
-  animation: lower-pos-1 var(--ring-animation);
-}
-svg.lower-ring [class$="2"] {
-  animation: lower-pos-2 var(--ring-animation);
-}
-svg.lower-ring [class$="3"] {
-  animation: lower-pos-3 var(--ring-animation);
-}
-svg.lower-ring [class$="4"] {
-  animation: lower-pos-4 var(--ring-animation);
-}
-svg.lower-ring [class$="5"] {
-  animation: lower-pos-5 var(--ring-animation);
-}
-svg.lower-ring [class$="6"] {
-  animation: lower-pos-6 var(--ring-animation);
-}
-
-svg.lower-ring [class^="a"],
-svg.upper-ring [class^="b"],
-svg.lower-ring [class^="c"] {
-  animation-direction: reverse;
-}
-svg.upper-ring [class^="c"],
-svg.lower-ring [class^="a"],
-svg.upper-ring-wide [class^="c"],
-svg.lower-ring-wide [class^="a"] {
-  opacity: 20%;
-}
-svg.upper-ring [class^="b"],
-svg.lower-ring [class^="b"],
-svg.upper-ring-wide [class^="b"],
-svg.lower-ring-wide [class^="b"] {
-  opacity: 50%;
-}
-/*these keyframes are made ONLY for the octopus svgs in the upper and lower rings of info-1.*/
-
-/*these values are not arbitrary
-to move diagonally 1 position, add or subtract 15.4% to the x coordinate and 6.21% to the y coordinate
-to more horizontally 1 position, add or subtract 18.2% to the x coordinate and 0 to the y coordinate.
-
-Each icon moves half a diagonal position more once it passes the last position, before being translated to the opposite side.
-When translated to the opposite side, it is half a diagonal position before the first position.
-*/
 @keyframes upper-pos-1 {
   16.67% {
     transform: translate(-15.4%, -12.42%);
@@ -243,11 +197,10 @@ When translated to the opposite side, it is half a diagonal position before the 
   }
   91.63% {
     transform: translate(-87.5%, 6.21%);
-    visibility: none;
   }
+
   91.64% {
     transform: translate(7.7%, 6.21%);
-    visibility: visible;
   }
   100% {
     transform: translate(0, 0);
@@ -268,11 +221,10 @@ When translated to the opposite side, it is half a diagonal position before the 
   }
   74.99% {
     transform: translate(-72.1%, 18.63%);
-    visibility: none;
   }
+
   75% {
     transform: translate(23.1%, 18.63%);
-    visibility: visible;
   }
   83.33% {
     transform: translate(15.4%, 12.42%);
@@ -294,6 +246,7 @@ When translated to the opposite side, it is half a diagonal position before the 
   58.33% {
     transform: translate(-56.7%, 31.05%);
   }
+
   58.34% {
     transform: translate(38.5%, 31.05%);
   }
@@ -317,6 +270,7 @@ When translated to the opposite side, it is half a diagonal position before the 
   41.66% {
     transform: translate(-38.5%, 31.05%);
   }
+
   41.67% {
     transform: translate(56.7%, 31.05%);
   }
@@ -340,6 +294,7 @@ When translated to the opposite side, it is half a diagonal position before the 
   25% {
     transform: translate(-23.1%, 18.63%);
   }
+
   25.01% {
     transform: translate(72.1%, 18.63%);
   }
@@ -363,6 +318,7 @@ When translated to the opposite side, it is half a diagonal position before the 
   8.33% {
     transform: translate(-7.7%, 6.21%);
   }
+
   8.34% {
     transform: translate(87.5%, 6.21%);
   }
@@ -386,27 +342,46 @@ When translated to the opposite side, it is half a diagonal position before the 
   }
 }
 
+svg.lower-ring-setup .ring [class$="1"] {
+  animation: lower-pos-1 var(--ring-animation);
+}
+svg.lower-ring-setup .ring [class$="2"] {
+  animation: lower-pos-2 var(--ring-animation);
+}
+svg.lower-ring-setup .ring [class$="3"] {
+  animation: lower-pos-3 var(--ring-animation);
+}
+svg.lower-ring-setup .ring [class$="4"] {
+  animation: lower-pos-4 var(--ring-animation);
+}
+svg.lower-ring-setup .ring [class$="5"] {
+  animation: lower-pos-5 var(--ring-animation);
+}
+svg.lower-ring-setup .ring [class$="6"] {
+  animation: lower-pos-6 var(--ring-animation);
+}
+
 @keyframes lower-pos-1 {
   16.67% {
-    transform: translate(-15.4%, 12.42%);
+    transform: translate(-15.4%, 6.45%);
   }
   33.33% {
-    transform: translate(-30.8%, 24.84%);
+    transform: translate(-30.8%, 12.9%);
   }
   50% {
-    transform: translate(-49%, 24.84%);
+    transform: translate(-49%, 12.9%);
   }
   66.67% {
-    transform: translate(-64.4%, 12.42%);
+    transform: translate(-64.4%, 6.45%);
   }
   83.33% {
     transform: translate(-79.8%, 0);
   }
   91.63% {
-    transform: translate(-87.5%, -6.21%);
+    transform: translate(-87.5%, -3.23%);
   }
   91.64% {
-    transform: translate(7.7%, -6.21%);
+    transform: translate(7.7%, -3.23%);
   }
   100% {
     transform: translate(0, 0);
@@ -414,25 +389,25 @@ When translated to the opposite side, it is half a diagonal position before the 
 }
 @keyframes lower-pos-2 {
   16.67% {
-    transform: translate(-15.4%, 12.42%);
+    transform: translate(-15.4%, 6.45%);
   }
   33.33% {
-    transform: translate(-33.6%, 12.42%);
+    transform: translate(-33.6%, 6.45%);
   }
   50% {
     transform: translate(-49%, 0);
   }
   66.67% {
-    transform: translate(-64.4%, -12.42%);
+    transform: translate(-64.4%, -6.45%);
   }
   74.99% {
-    transform: translate(-72.1%, -18.63%);
+    transform: translate(-72.1%, -9.68%);
   }
   75% {
-    transform: translate(23.1%, -18.63%);
+    transform: translate(23.1%, -9.68%);
   }
   83.33% {
-    transform: translate(15.4%, -12.42%);
+    transform: translate(15.4%, -6.45%);
   }
   100% {
     transform: translate(0, 0);
@@ -443,22 +418,22 @@ When translated to the opposite side, it is half a diagonal position before the 
     transform: translate(-18.2%, 0);
   }
   33.33% {
-    transform: translate(-33.6%, -12.42%);
+    transform: translate(-33.6%, -6.45%);
   }
   50% {
-    transform: translate(-49%, -24.84%);
+    transform: translate(-49%, -12.9%);
   }
   58.33% {
-    transform: translate(-56.7%, -31.05%);
+    transform: translate(-56.7%, -16.13%);
   }
   58.34% {
-    transform: translate(38.5%, -31.05%);
+    transform: translate(38.5%, -16.13%);
   }
   66.67% {
-    transform: translate(30.8%, -24.84%);
+    transform: translate(30.8%, -12.9%);
   }
   83.33% {
-    transform: translate(15.4%, -12.42%);
+    transform: translate(15.4%, -6.45%);
   }
   100% {
     transform: translate(0, 0);
@@ -466,22 +441,22 @@ When translated to the opposite side, it is half a diagonal position before the 
 }
 @keyframes lower-pos-4 {
   16.67% {
-    transform: translate(-15.4%, -12.42%);
+    transform: translate(-15.4%, -6.45%);
   }
   33.33% {
-    transform: translate(-30.8%, -24.84%);
+    transform: translate(-30.8%, -12.9%);
   }
   41.66% {
-    transform: translate(-38.5%, -31.05%);
+    transform: translate(-38.5%, -16.13%);
   }
   41.67% {
-    transform: translate(56.7%, -31.05%);
+    transform: translate(56.7%, -16.13%);
   }
   50% {
-    transform: translate(49%, -24.84%);
+    transform: translate(49%, -12.9%);
   }
   66.67% {
-    transform: translate(33.6%, -12.42%);
+    transform: translate(33.6%, -6.45%);
   }
   83.33% {
     transform: translate(18.2%, 0);
@@ -492,25 +467,26 @@ When translated to the opposite side, it is half a diagonal position before the 
 }
 @keyframes lower-pos-5 {
   16.67% {
-    transform: translate(-15.4%, -12.42%);
+    transform: translate(-15.4%, -6.45%);
   }
   25% {
-    transform: translate(-23.1%, -18.63%);
+    transform: translate(-23.1%, -9.68%);
   }
+
   25.01% {
-    transform: translate(72.1%, -18.63%);
+    transform: translate(72.1%, -9.68%);
   }
   33.33% {
-    transform: translate(64.4%, -12.42%);
+    transform: translate(64.4%, -6.45%);
   }
   50% {
     transform: translate(49%, 0);
   }
   66.67% {
-    transform: translate(33.6%, 12.42%);
+    transform: translate(33.6%, 6.45%);
   }
   83.33% {
-    transform: translate(15.4%, 12.42%);
+    transform: translate(15.4%, 6.45%);
   }
   100% {
     transform: translate(0, 0);
@@ -518,30 +494,46 @@ When translated to the opposite side, it is half a diagonal position before the 
 }
 @keyframes lower-pos-6 {
   8.33% {
-    transform: translate(-7.7%, -6.21%);
+    transform: translate(-7.7%, -3.23%);
   }
+
   8.34% {
-    transform: translate(87.5%, -6.21%);
+    transform: translate(87.5%, -3.23%);
   }
   16.67% {
     transform: translate(79.8%, 0);
   }
   33.33% {
-    transform: translate(64.4%, 12.42%);
+    transform: translate(64.4%, 6.45%);
   }
   50% {
-    transform: translate(49%, 24.84%);
+    transform: translate(49%, 12.9%);
   }
   66.67% {
-    transform: translate(30.8%, 24.84%);
+    transform: translate(30.8%, 12.9%);
   }
   83.33% {
-    transform: translate(15.4%, 12.42%);
+    transform: translate(15.4%, 6.45%);
   }
   100% {
     transform: translate(0, 0);
   }
 }
+svg.lower-ring-setup .ring [class^="a"],
+svg.upper-ring [class^="b"],
+svg.lower-ring-setup .ring [class^="c"] {
+  animation-direction: reverse;
+}
+/*these keyframes are made ONLY for the octopus svgs in the upper and lower rings of info-1.*/
+
+/*these values are not arbitrary
+to move diagonally 1 position, add or subtract 15.4% to the x coordinate and 6.21% to the y coordinate
+to more horizontally 1 position, add or subtract 18.2% to the x coordinate and 0 to the y coordinate.
+
+Each icon moves half a diagonal position more once it passes the last position, before being translated to the opposite side.
+When translated to the opposite side, it is half a diagonal position before the first position.
+*/
+
 /*to translate diagonally change the x coordinate by 10.8% and the y coordinate by 10.8%
 the values being the same is a serendipitous occurence. Be grateful.
 
@@ -1235,5 +1227,165 @@ svg.lower-ring-wide [class^="c"] {
   }
   100% {
     transform: translate(0, 0);
+  }
+}
+.js-coin-explosion-animation-1 {
+  animation: coin-1 var(--coin-animation);
+}
+.js-coin-explosion-animation-2 {
+  animation: coin-2 var(--coin-animation);
+}
+.js-coin-explosion-animation-3 {
+  animation: coin-3 var(--coin-animation);
+}
+.js-coin-explosion-animation-4 {
+  animation: coin-4 var(--coin-animation);
+}
+.js-coin-explosion-animation-5 {
+  animation: coin-5 var(--coin-animation);
+}
+.js-coin-explosion-animation-6 {
+  animation: coin-6 var(--coin-animation);
+}
+.js-coin-explosion-animation-7 {
+  animation: coin-7 var(--coin-animation);
+}
+.js-coin-explosion-animation-8 {
+  animation: coin-8 var(--coin-animation);
+}
+.js-coin-explosion-animation-9 {
+  animation: coin-9 var(--coin-animation);
+}
+.js-coin-explosion-animation-10 {
+  animation: coin-10 var(--coin-animation);
+}
+@keyframes coin-1 {
+  to {
+    transform: translate(-5%, -47%);
+  }
+}
+@keyframes coin-2 {
+  to {
+    transform: translate(21%, -43%);
+  }
+}
+@keyframes coin-3 {
+  to {
+    transform: translate(13%, -34%);
+  }
+}
+@keyframes coin-4 {
+  to {
+    transform: translate(-17%, -26%);
+  }
+}
+@keyframes coin-5 {
+  to {
+    transform: translate(-3%, -23%);
+  }
+}
+@keyframes coin-6 {
+  to {
+    transform: translate(15%, -20%);
+  }
+}
+@keyframes coin-7 {
+  to {
+    transform: translate(-1%, -12%);
+  }
+}
+@keyframes coin-8 {
+  to {
+    transform: translate(2%, -14%);
+  }
+}
+@keyframes coin-9 {
+  to {
+    transform: translate(-12%, -17%);
+  }
+}
+@keyframes coin-10 {
+  to {
+    transform: translate(-11%, -10%);
+  }
+}
+.js-coin-explosion-animation-wide-1 {
+  animation: coin-1 var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-2 {
+  animation: coin-2-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-3 {
+  animation: coin-3-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-4 {
+  animation: coin-4-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-5 {
+  animation: coin-5-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-6 {
+  animation: coin-6-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-7 {
+  animation: coin-7-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-8 {
+  animation: coin-8-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-9 {
+  animation: coin-9-wide var(--coin-animation);
+}
+.js-coin-explosion-animation-wide-10 {
+  animation: coin-10-wide var(--coin-animation);
+}
+@keyframes coin-1-wide {
+  to {
+    transform: translate(-5%, -47%);
+  }
+}
+@keyframes coin-2-wide {
+  to {
+    transform: translate(21%, -43%);
+  }
+}
+@keyframes coin-3-wide {
+  to {
+    transform: translate(13%, -34%);
+  }
+}
+@keyframes coin-4-wide {
+  to {
+    transform: translate(-17%, -26%);
+  }
+}
+@keyframes coin-5-wide {
+  to {
+    transform: translate(-3%, -23%);
+  }
+}
+@keyframes coin-6-wide {
+  to {
+    transform: translate(15%, -20%);
+  }
+}
+@keyframes coin-7-wide {
+  to {
+    transform: translate(-1%, -12%);
+  }
+}
+@keyframes coin-8-wide {
+  to {
+    transform: translate(2%, -14%);
+  }
+}
+@keyframes coin-9-wide {
+  to {
+    transform: translate(-12%, -17%);
+  }
+}
+@keyframes coin-10-wide {
+  to {
+    transform: translate(-11%, -10%);
   }
 }

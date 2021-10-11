@@ -35,13 +35,13 @@
     flex-direction: row-reverse;
   }
   section svg.upper-ring-wide,
-  section svg.lower-ring-wide,
+  section svg.lower-ring-wide-setup,
   section img[src$="coin-group-carousel.svg"],
   section img[src$="digital-octopi-carousel.svg"] {
     display: none;
   }
 }
-/*background "sparse" octopi will be positioned absolutely, relative to intro container*/
+
 .intro {
   margin-top: 3rem;
   position: relative;
@@ -62,14 +62,14 @@
 }
 svg.upper-ring {
   position: relative;
-  width: 138.4%;
-  right: 19.2%;
+  width: 143%;
+  right: 21.5%;
   height: auto;
 }
 svg.upper-ring-wide {
   position: relative;
-  width: 125%;
-  right: 12.5%;
+  width: 130%;
+  right: 15%;
   height: auto;
 }
 @media screen and (max-width: 550px) {
@@ -95,28 +95,28 @@ svg.upper-ring-wide {
 .info-1 .visual-content {
   z-index: -1;
 }
-svg.lower-ring {
+svg.lower-ring-setup {
   position: relative;
-  width: 138.4%;
-  right: 19.2%;
+  width: 143%;
+  right: 21.5%;
   height: auto;
 }
-svg.lower-ring-wide {
+svg.lower-ring-setup-wide {
   position: relative;
-  width: 125%;
-  right: 12.5%;
+  width: 130%;
+  right: 15%;
   height: auto;
 }
-@media screen and (max-width: 550px) {
-  svg.lower-ring-wide {
+@media screen and (max-width: 550px), screen and (min-width: 825px) {
+  svg.lower-ring-setup-wide {
     display: none;
   }
 }
 @media screen and (min-width: 550px) {
-  svg.lower-ring {
+  svg.lower-ring-setup {
     display: none;
   }
-  svg.lower-ring-wide {
+  svg.lower-ring-setup-wide {
     display: unset;
   }
 }
