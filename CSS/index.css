@@ -1,6 +1,13 @@
 /*****************************************/
 /*************GENERAL STYLING*************/
 /*****************************************/
+:root {
+  --segment-animation: 700ms ease-out infinite;
+  --ring-animation: 20000ms linear infinite;
+  --coin-animation: 750ms cubic-bezier(0, 1.18, 0.35, 0.97) 1 forwards;
+  --hover-animation: hover 3500ms ease-in-out infinite alternate-reverse;
+  --phase-animation: phase 2000ms ease-in-out infinite alternate-reverse;
+}
 @media screen and (min-width: 875px) {
   section {
     display: flex;
