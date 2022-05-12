@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  max-width: 100vw;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: unset;
+}
+a:-moz-any-link {
+  text-decoration: none;
+  color: unset;
+}
+a:any-link,
+a {
+  text-decoration: none;
+  color: unset;
+}
+img {
+  display: block;
+}
+li {
+  list-style-type: none;
+}
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
