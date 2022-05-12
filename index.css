@@ -1,61 +1,73 @@
-/*header: complete! (1300px)
-  body: complete up to 550px
-  footer: complete! (1300px)
-*/
-
-/* 
-   BODY
-   1) Create button transitions and styling for active,hover,and focus states.
-   2) Add accessibility to HTML
-   3) Create media query for "prefers less motion" browser setting to disable animations if
-      user turns on setting.
-
-   MAIN (goal: ~800px)
-
-   1) add ch limit to text blocks beyond upper 300px -low 400px range.
-   2) maybe animate coins in digital octopus graphic to move in own patterns.
-      Extremely tedious.
-   3) Create new figma graphic for octopi ring, with more octopi 
-      (so a larger screen size still has reasonably sized octopi). 
-      Measure upper limit of current octopi and octopi source file size to help calculate.
-   4) Apply same technique as (4) to hills + clam + coins to keep them proportional and smaller.
-   5) Potential fix to sparse octopi isses: replace with transparent diagonal "chains" of octopi
-      that span the viewport. Animate motion.
-
-*/
-
 /*****************************************/
-/************* INTRO SECTION *************/
+/*************GENERAL STYLING*************/
 /*****************************************/
-@media screen and (min-width: 825px) {
+@media screen and (min-width: 875px) {
   section {
     display: flex;
   }
+
+  section > * {
+    min-width: 50%;
+  }
+
   section:nth-child(even) {
     flex-direction: row-reverse;
   }
-  section svg.upper-ring-wide,
-  section svg.lower-ring-wide-setup,
-  section img[src$="coin-group-carousel.svg"],
-  section img[src$="digital-octopi-carousel.svg"] {
+  section .text-content {
+    padding: 1.5rem;
+  }
+  svg.upper-ring-wide,
+  svg.lower-ring-wide-setup,
+  img[src$="coin-group-carousel.svg"],
+  img[src$="digital-octopi-carousel.svg"] {
     display: none;
   }
+  section .visual-content {
+    display: flex;
+  }
+  p {
+    text-align: left;
+    font-size: 1.25rem;
+  }
 }
-
+/*****************************************/
+/************* INTRO SECTION *************/
+/*****************************************/
 .intro {
   margin-top: 3rem;
   position: relative;
   overflow-y: visible;
 }
-
 .intro h1 {
   font-size: 2.63rem;
   max-width: 15ch;
+}
+svg.octo-group-desktop {
+  display: none;
+}
+@media screen and (min-width: 425px) {
+  .intro h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 550px) {
+  .intro h1 {
+    font-size: 3.4rem;
+  }
 }
 .intro .buttons-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+@media screen and (min-width: 650px) {
+  .intro .buttons-content {
+    flex-direction: row;
+  }
+  .intro .buttons-content a.primary {
+    position: relative;
+    padding-top: 0.8em;
+  }
 }
 .intro .visual-content {
   margin: 3rem auto 0;
@@ -85,6 +97,24 @@ svg.upper-ring-wide {
     display: unset;
   }
 }
+@media screen and (min-width: 875px) {
+  svg.octo-group-desktop {
+    display: unset;
+    overflow-y: visible;
+  }
+  svg.upper-ring-wide {
+    display: none;
+  }
+  .intro .visual-content {
+    margin: unset;
+    overflow-y: visible;
+  }
+  p {
+    position: relative;
+    left: 3%;
+  }
+}
+
 /*****************************************/
 /*************INFO-1 SECTION**************/
 /*****************************************/
@@ -107,7 +137,10 @@ svg.lower-ring-setup-wide {
   right: 15%;
   height: auto;
 }
-@media screen and (max-width: 550px), screen and (min-width: 825px) {
+svg.hill-setup-desktop {
+  display: none;
+}
+@media screen and (max-width: 550px), screen and (min-width: 875px) {
   svg.lower-ring-setup-wide {
     display: none;
   }
@@ -120,19 +153,46 @@ svg.lower-ring-setup-wide {
     display: unset;
   }
 }
+@media screen and (min-width: 875px) {
+  .info-1 {
+    margin-top: 3rem;
+  }
+  svg.lower-ring-setup-wide {
+    display: none;
+  }
+  svg.hill-setup-desktop {
+    display: unset;
+  }
+}
 
 /*****************************************/
 /*************INFO-2 SECTION**************/
 /*****************************************/
 
 .info-2 {
-  margin: 3rem auto 0;
+  margin: 0 auto;
+}
+@media screen and (min-width: 875px) {
+  .info-2 {
+    flex-direction: row;
+    width: 100%;
+  }
 }
 .info-2 .buttons-content {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
+@media screen and (min-width: 650px) {
+  .info-2 .buttons-content {
+    flex-direction: row;
+    width: 100%;
+  }
+  .info-2 .buttons-content a {
+    width: 50%;
+  }
+}
+
 .info-2 .visual-content {
   z-index: -1;
   position: relative;
@@ -160,12 +220,46 @@ svg.octopus-ring-setup {
     margin: 2rem auto;
   }
 }
+@media screen and (min-width: 875px) {
+  .info-2 .visual-content {
+    margin: unset;
+    display: unset;
+  }
+  svg.octopus-ring-setup {
+    right: unset;
+    width: 100%;
+    height: 100%;
+  }
+  .info-2 {
+    margin-top: 4rem;
+    align-items: center;
+  }
+  .info-2 .buttons-content a {
+    width: unset;
+  }
+  .info-2 .buttons-content {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .info-2 .buttons-content a {
+    min-width: 20ch;
+  }
+}
 /*****************************************/
 /*************INFO-3 SECTION**************/
 /*****************************************/
 .info-3 .visual-content {
   position: relative;
   margin-top: 4rem;
+}
+@media screen and (min-width: 875px) {
+  .info-3 .visual-content {
+    margin-top: unset;
+  }
+}
+.info-3 svg.digital-octopi-coins {
+  display: none;
 }
 .info-3 img[src$="coins.svg"] {
   position: absolute;
@@ -184,6 +278,11 @@ svg.octopus-ring-setup {
   z-index: -1;
   animation: octopi-carousel 15000ms linear infinite;
 }
+@media screen and (min-width: 875px) {
+  .info-3 svg.digital-octopi-coins {
+    display: unset;
+  }
+}
 
 /*****************************************/
 /*************CONCLUSION SECTION**************/
@@ -191,6 +290,11 @@ svg.octopus-ring-setup {
 
 .conclusion {
   margin-top: 4rem;
+}
+@media screen and (min-width: 650px) {
+  .conclusion {
+    margin-bottom: -4rem;
+  }
 }
 .conclusion .text-content {
   display: flex;
@@ -211,9 +315,24 @@ svg.octopus-ring-setup {
   gap: 1.25rem;
   margin-top: 1.5rem;
 }
+@media screen and (min-width: 800px) {
+  .conclusion .buttons-content {
+    flex-direction: row;
+    width: 100%;
+  }
+  .conclusion .buttons-content a.primary,
+  .conclusion .buttons-content a.secondary {
+    width: 50%;
+  }
+}
 .conclusion a.secondary {
   padding: 0.75rem 1.5rem;
 }
 .conclusion a.primary {
   width: 75%;
+}
+@media screen and (min-width: 825px) {
+  .conclusion {
+    margin-top: 10rem;
+  }
 }

@@ -3,6 +3,7 @@
 1) all global variables
 2) all developer defined default styles
 3) all styling for the header and footer
+4) all button transitions
 
 ***this also includes any associated media queries***
 */
@@ -11,15 +12,15 @@
   --content-font: "Inconsolata", monospace;
   --accent-font: "DM Mono", monospace;
   --default-transition: all 250ms ease-in;
-  --fast-transition: all 200ms ease-in;
-  --slow-transition: all 400ms ease-in;
-  --main-blue: rgba(11, 20, 236, 1);
   --neon-teal: rgba(0, 240, 255, 1);
   --off-white: rgba(240, 240, 240, 1);
   --dark-blue: rgba(28, 30, 81, 1);
+  --main-blue: rgba(11, 20, 236, 1);
   --segment-animation: 700ms ease-out infinite;
   --ring-animation: 20000ms linear infinite;
   --coin-animation: 750ms cubic-bezier(0, 1.18, 0.35, 0.97) 1 forwards;
+  --hover-animation: hover 3500ms ease-in-out infinite alternate-reverse;
+  --phase-animation: phase 2000ms ease-in-out infinite alternate-reverse;
 }
 body {
   background: var(--dark-blue);
@@ -34,6 +35,7 @@ a.secondary {
   font-family: var(--heading-font);
   font-weight: bold;
   text-align: center;
+  transition: color 250ms ease-in, background-color 250ms ease-in;
 }
 h2 {
   font-size: 1.9rem;
@@ -46,13 +48,7 @@ p {
   font-family: var(--content-font);
   line-height: 2rem;
   text-align: center;
-}
-a.primary {
-  color: var(--dark-blue);
-  background-color: var(--neon-teal);
-  font-family: var(--heading-font);
-  font-weight: bold;
-  text-align: center;
+  font-size: 1rem;
 }
 a.secondary,
 a.primary {
@@ -63,6 +59,25 @@ a.primary {
 }
 a.primary {
   border: none;
+  transition: color 250ms ease-in;
+  color: var(--dark-blue);
+  background-color: var(--neon-teal);
+  font-family: var(--heading-font);
+  font-weight: bold;
+  text-align: center;
+}
+a.primary:hover {
+  transition: color 250ms ease-in;
+  color: var(--off-white);
+}
+a.secondary:hover {
+  transition: color 250ms ease-in, background-color 250ms ease-in;
+  color: var(--off-white);
+  background-color: var(--neon-teal);
+}
+a.primary:active,
+a.secondary:active {
+  filter: brightness(80%);
 }
 .text-content {
   width: 85%;
@@ -72,6 +87,22 @@ a.primary {
   align-items: center;
   gap: 2rem;
   z-index: 1;
+}
+@media screen and (min-width: 550px) {
+  .text-content {
+    width: 75%;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  h2 {
+    font-size: 2.1rem;
+  }
+}
+@media screen and (min-width: 650px) {
+  h2 {
+    font-size: 2.5rem;
+  }
 }
 /*****************************************/
 /*****************HEADER******************/
@@ -164,9 +195,6 @@ nav ul {
 /****************FOOTER*******************/
 /*****************************************/
 
-/*essentially complete!*/
-/*maybe tweak font sizes, tweak gaps, potentially add social media mini menu */
-
 footer {
   margin: 3rem 0 1rem;
   overflow: hidden;
@@ -197,9 +225,9 @@ footer h3 {
   font-size: 1.1rem;
   text-align: left;
 }
-footer .mini-menu:nth-child(even) {
+/* footer .mini-menu:nth-child(even) {
   justify-self: end;
-}
+} */
 footer .mini-menu ul {
   display: flex;
   flex-direction: column;
