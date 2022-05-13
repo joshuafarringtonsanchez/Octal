@@ -192,7 +192,7 @@ svg.hill-setup-desktop {
     -ms-flex-direction: row;
     flex-direction: row;
     width: 100%;
-    overflow-x: unset;
+    
   }
 }
 .info-2 .buttons-content {
@@ -227,6 +227,7 @@ svg.octopus-ring-setup {
   position: relative;
   width: 130%;
   right: 15%;
+  overflow-x: unset;
 }
 @media screen and (min-width: 380px) {
   .info-2 .visual-content {
