@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 /*this file contains:
 
 1) all global variables
@@ -65,6 +72,7 @@ a.primary {
   font-family: var(--heading-font);
   font-weight: bold;
   text-align: center;
+  overflow-x: unset;
 }
 a.primary:hover {
   -webkit-transition: color 250ms ease-in;
