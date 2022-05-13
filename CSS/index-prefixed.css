@@ -293,6 +293,8 @@ svg.octopus-ring-setup {
 .info-3 .visual-content {
   position: relative;
   margin-top: 4rem;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 875px) {
   .info-3 .visual-content {
