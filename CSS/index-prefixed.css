@@ -43,6 +43,7 @@
   margin-top: 3rem;
   position: relative;
   overflow-y: visible;
+  overflow-x: hidden;
 }
 .intro h1 {
   font-size: 2.63rem;
@@ -132,6 +133,9 @@ svg.octo-group-desktop {
 /*************INFO-1 SECTION**************/
 /*****************************************/
 
+.info-1 {
+  overflow-x: hidden;
+}
 .info-1 .text-content {
   margin: 0 auto;
 }
@@ -192,11 +196,7 @@ svg.hill-setup-desktop {
     -ms-flex-direction: row;
     flex-direction: row;
     width: 100%;
-    
   }
-}
-.info-2 .text-content{
-  overflow-x: unset;
 }
 .info-2 .buttons-content {
   display: -webkit-box;
@@ -230,7 +230,6 @@ svg.octopus-ring-setup {
   position: relative;
   width: 130%;
   right: 15%;
-  overflow-x: unset;
 }
 @media screen and (min-width: 380px) {
   .info-2 .visual-content {
@@ -258,7 +257,6 @@ svg.octopus-ring-setup {
     right: unset;
     width: 100%;
     height: 100%;
-    
   }
   .info-2 {
     margin-top: 4rem;
@@ -283,6 +281,9 @@ svg.octopus-ring-setup {
 /*****************************************/
 /*************INFO-3 SECTION**************/
 /*****************************************/
+.info-3 * {
+  overflow-x: hidden;
+}
 .info-3 .visual-content {
   position: relative;
   margin-top: 4rem;
