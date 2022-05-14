@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.12,
-* Autoprefixer: v10.4.4
-* Browsers: last 4 version
-*/
-
 /*this file contains:
 
 1) all global variables
@@ -23,6 +16,11 @@
   --off-white: rgba(240, 240, 240, 1);
   --dark-blue: rgba(28, 30, 81, 1);
   --main-blue: rgba(11, 20, 236, 1);
+  --segment-animation: 700ms ease-out infinite;
+  --ring-animation: 20000ms linear infinite;
+  --coin-animation: 750ms cubic-bezier(0, 1.18, 0.35, 0.97) 1 forwards;
+  --hover-animation: hover 3500ms ease-in-out infinite alternate-reverse;
+  --phase-animation: phase 2000ms ease-in-out infinite alternate-reverse;
 }
 body {
   background: var(--dark-blue);
@@ -37,8 +35,6 @@ a.secondary {
   font-family: var(--heading-font);
   font-weight: bold;
   text-align: center;
-  -webkit-transition: color 250ms ease-in, background-color 250ms ease-in;
-  -o-transition: color 250ms ease-in, background-color 250ms ease-in;
   transition: color 250ms ease-in, background-color 250ms ease-in;
 }
 h2 {
@@ -64,8 +60,6 @@ a.primary {
 }
 a.primary {
   border: none;
-  -webkit-transition: color 250ms ease-in;
-  -o-transition: color 250ms ease-in;
   transition: color 250ms ease-in;
   color: var(--dark-blue);
   background-color: var(--neon-teal);
@@ -75,14 +69,10 @@ a.primary {
   overflow-x: unset;
 }
 a.primary:hover {
-  -webkit-transition: color 250ms ease-in;
-  -o-transition: color 250ms ease-in;
   transition: color 250ms ease-in;
   color: var(--off-white);
 }
 a.secondary:hover {
-  -webkit-transition: color 250ms ease-in, background-color 250ms ease-in;
-  -o-transition: color 250ms ease-in, background-color 250ms ease-in;
   transition: color 250ms ease-in, background-color 250ms ease-in;
   color: var(--off-white);
   background-color: var(--neon-teal);
@@ -95,15 +85,8 @@ a.secondary:active {
 .text-content {
   width: 85%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 2rem;
   z-index: 1;
@@ -131,16 +114,9 @@ a.secondary:active {
 header {
   height: 4rem;
   padding: 0 0.75rem;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0.5rem;
 }
@@ -153,18 +129,9 @@ header .logo {
 .burger-button {
   height: 2.5rem;
   width: 2.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   z-index: 2;
 }
@@ -182,12 +149,7 @@ nav {
   top: 0;
   left: 100vw;
   z-index: 1;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))),
-    var(--dark-blue);
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--dark-blue);
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--dark-blue);
-  -webkit-transition: opacity 250ms ease-in, left 0ms linear 250ms;
-  -o-transition: opacity 250ms ease-in, left 0ms linear 250ms;
   transition: opacity 250ms ease-in, left 0ms linear 250ms;
 }
 
@@ -195,24 +157,13 @@ nav {
 #burger-button:checked ~ nav {
   opacity: 1;
   left: 0;
-  -webkit-transition: opacity 250ms ease-in;
-  -o-transition: opacity 250ms ease-in;
   transition: opacity 250ms ease-in;
 }
 nav ul {
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   gap: 2.5rem;
   font-family: var(--heading-font);
@@ -220,14 +171,10 @@ nav ul {
   color: var(--off-white);
   height: 100%;
   opacity: 0;
-  -webkit-transition: var(--default-transition);
-  -o-transition: var(--default-transition);
   transition: var(--default-transition);
 }
 #burger-button:checked ~ nav ul {
   opacity: 1;
-  -webkit-transition: var(--default-transition);
-  -o-transition: var(--default-transition);
   transition: var(--default-transition);
 }
 @media screen and (min-width: 825px) {
@@ -242,9 +189,6 @@ nav ul {
     background: transparent;
   }
   nav ul {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
     gap: 7vw;
     opacity: 1;
@@ -265,28 +209,17 @@ footer .visual-content img {
   width: 100%;
 }
 footer .text-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
+  align-items: flex-start;
   margin-top: -3rem;
 }
 footer h1 {
   margin-left: -0.5rem;
 }
 footer .menu-content {
-  display: -ms-grid;
   display: grid;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
-  -ms-grid-rows: 1fr 3rem 1fr;
-  -ms-grid-columns: 1fr 0 1fr;
+  justify-content: flex-start;
+  align-items: flex-start;
   grid-template: 1fr 1fr / 1fr 1fr;
   gap: 3rem 0;
   width: 95%;
@@ -299,12 +232,7 @@ footer h3 {
   justify-self: end;
 } */
 footer .mini-menu ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 0.75rem;
@@ -325,11 +253,7 @@ footer .mini-menu a {
   }
   footer .menu-content {
     margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     gap: 2rem;
     width: 100%;
@@ -341,26 +265,15 @@ footer .mini-menu a {
   }
 
   footer .text-content {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
   }
   footer h1 {
     margin-left: 0;
   }
   footer .menu-content {
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: end;
   }
 }
