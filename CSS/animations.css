@@ -19,7 +19,8 @@
   --segment-animation: 700ms ease-out infinite;
   --ring-animation: 20000ms linear infinite;
   --coin-animation: 750ms cubic-bezier(0, 1.18, 0.35, 0.97) 1 forwards;
-  --hover-animation: hover 3500ms ease-in-out infinite alternate-reverse;
+  --hover-up-animation: hover-up 3500ms ease-in-out infinite alternate-reverse;
+  --hover-down-animation: hover-down 3500ms ease-in-out infinite alternate-reverse;
   --phase-animation: phase 2000ms ease-in-out infinite alternate-reverse;
 }
 svg.octopus-ring-setup .octopus-ring {
@@ -1431,31 +1432,46 @@ svg.lower-ring-setup-wide .ring [class^="c"] {
 /********DESKTOP OCTO GROUP and DESKTOP HILL SETUP*********/
 /**********************************************************/
 
-svg.octo-group-desktop [class^="octo"],
-svg.hill-setup-desktop [class^="octo"] {
-  animation: var(--hover-animation);
+svg.hill-setup-desktop [class^="octo"],
+svg.octo-group-desktop .octo-1,
+svg.octo-group-desktop .octo-3,
+svg.octo-group-desktop .octo-6,
+svg.octo-group-desktop .octo-8,
+svg.octo-group-desktop .octo-11 {
+  animation: var(--hover-down-animation);
 }
 svg.octo-group-desktop .octo-2,
-svg.hill-setup-desktop .octo-2,
-svg.octo-group-desktop .octo-3,
-svg.hill-setup-desktop .octo-3,
 svg.octo-group-desktop .octo-4,
-svg.hill-setup-desktop .octo-4,
 svg.octo-group-desktop .octo-5,
-svg.hill-setup-desktop .octo-5,
-svg.octo-group-desktop .octo-6,
-svg.hill-setup-desktop .octo-6,
 svg.octo-group-desktop .octo-7,
-svg.hill-setup-desktop .octo-7,
-svg.octo-group-desktop .octo-10 {
+svg.octo-group-desktop .octo-9,
+svg.octo-group-desktop .octo-10,
+svg.octo-group-desktop .octo-12 {
+  animation: var(--hover-up-animation);
+}
+
+svg.hill-setup-desktop .octo-2,
+svg.hill-setup-desktop .octo-3,
+svg.hill-setup-desktop .octo-4,
+svg.hill-setup-desktop .octo-5,
+svg.hill-setup-desktop .octo-7 {
+  animation: var(--hover-up-animation);
   animation-delay: -1750ms;
 }
-@keyframes hover {
+@keyframes hover-down {
   0% {
     transform: translate(0);
   }
   100% {
     transform: translateY(5%);
+  }
+}
+@keyframes hover-up {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translateY(-5%);
   }
 }
 
