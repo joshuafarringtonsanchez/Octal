@@ -1432,7 +1432,11 @@ svg.lower-ring-setup-wide .ring [class^="c"] {
 /********DESKTOP OCTO GROUP and DESKTOP HILL SETUP*********/
 /**********************************************************/
 
-svg.hill-setup-desktop [class^="octo"],
+svg.hill-setup-desktop .octo-1,
+svg.hill-setup-desktop .octo-2,
+svg.hill-setup-desktop .octo-3,
+svg.hill-setup-desktop .octo-5,
+svg.hill-setup-desktop .octo-7,
 svg.octo-group-desktop .octo-1,
 svg.octo-group-desktop .octo-3,
 svg.octo-group-desktop .octo-6,
@@ -1440,6 +1444,10 @@ svg.octo-group-desktop .octo-8,
 svg.octo-group-desktop .octo-11 {
   animation: var(--hover-down-animation);
 }
+svg.hill-setup-desktop .octo-4,
+svg.hill-setup-desktop .octo-6,
+svg.hill-setup-desktop .octo-8,
+svg.hill-setup-desktop .octo-9,
 svg.octo-group-desktop .octo-2,
 svg.octo-group-desktop .octo-4,
 svg.octo-group-desktop .octo-5,
@@ -1448,15 +1456,6 @@ svg.octo-group-desktop .octo-9,
 svg.octo-group-desktop .octo-10,
 svg.octo-group-desktop .octo-12 {
   animation: var(--hover-up-animation);
-}
-
-svg.hill-setup-desktop .octo-2,
-svg.hill-setup-desktop .octo-3,
-svg.hill-setup-desktop .octo-4,
-svg.hill-setup-desktop .octo-5,
-svg.hill-setup-desktop .octo-7 {
-  animation: var(--hover-up-animation);
-  animation-delay: -1750ms;
 }
 @keyframes hover-down {
   0% {
