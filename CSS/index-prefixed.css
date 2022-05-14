@@ -187,6 +187,7 @@ svg.hill-setup-desktop {
 
 .info-2 {
   margin: 0 auto;
+  overflow: hidden;
 }
 @media screen and (min-width: 875px) {
   .info-2 {
