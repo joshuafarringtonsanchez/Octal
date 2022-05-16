@@ -1,4 +1,4 @@
-if(!this.IntersectionObserver)alert("not supported!"));
+if(!this.IntersectionObserver)alert("not supported!");
 else alert("Supported!");
 let options = {
   root: null,
