@@ -1,3 +1,5 @@
+if(!this.IntersectionObserver)alert("not supported!"));
+else alert("Supported!");
 let options = {
   root: null,
   rootMargin: "0px",
